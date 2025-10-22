@@ -309,6 +309,10 @@ socket.on('whiteboard:undo', ({ workspaceId }) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('✅ CollabFlexify Backend is running!');
+});
+
 // Catch-all 404 handler for undefined routes
 app.use((req, res, next) => {
   res.status(404).json({ message: 'Route not found' });
