@@ -29,7 +29,10 @@ const activeVideoCalls = new Map();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // adjust for production frontend
+  origin: [
+    'http://localhost:3000',                          // for local development
+    'https://collabflexify-frontend.vercel.app'       // for deployed frontend
+  ],
   credentials: true,
 }));
 app.use(express.json());
